@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Rejestracja</h2>
+        
+        <div class="profile-pic-container">
+            <img id="profile-pic-preview" src="assets/user-avatar.png" alt="Podgląd zdjęcia">
+        </div>
+
+        <form id="register-form" enctype="multipart/form-data">
+            <input type="file" id="profilePic" name="avatar" accept="image/*">
+            <input type="text" id="firstName" placeholder="Imię" required>
+            <input type="text" id="lastName" placeholder="Nazwisko" required>
+            <input type="date" id="birthdate" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="text" id="username" placeholder="Nazwa użytkownika" required>
+            <input type="password" id="password" placeholder="Hasło (min. 6 znaków)" required>
+            <button type="submit">Zarejestruj się</button>
+        </form>
+
+        <p>Masz już konto? <a href="login.html">Zaloguj się</a></p>
+    </div>
+
+    <script src="js/register.js"></script>
+    <script>
+        document.getElementById("profilePic").addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById("profile-pic-preview").src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

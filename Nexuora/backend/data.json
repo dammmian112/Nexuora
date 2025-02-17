@@ -1,0 +1,160 @@
+{
+    "users": [
+        {
+            "id": 1739795032996,
+            "firstName": "Jacek",
+            "lastName": "placek",
+            "birthdate": "2000-12-12",
+            "email": "jacekplacek@wp.pl",
+            "username": "jacekplacek",
+            "password": "$2b$10$dcZH/tm/687WckZWMAk7MOAGqCTC.yQVqnYfbbcMHw0E2YEaWkC6i",
+            "bio": "",
+            "age": 25,
+            "avatar": "/uploads/1739795032914-474207253.png",
+            "friends": [
+                1739795557692,
+                1739795810235,
+                1739829704298,
+                1739804342805
+            ],
+            "friendRequests": []
+        },
+        {
+            "id": 1739795557692,
+            "firstName": "aaaa",
+            "lastName": "aaaa",
+            "birthdate": "1999-12-12",
+            "email": "asdasd@wp.pl",
+            "username": "asd",
+            "password": "$2b$10$M9uk7TRn51b6W5Pb8T.ygeFZPgDFg5YlAZ5UqR429Y6oa3TaGM0Ii",
+            "bio": "",
+            "age": 26,
+            "avatar": "/uploads/1739795557624-926274511.png",
+            "friends": [
+                1739795032996,
+                1739829704298
+            ],
+            "friendRequests": []
+        },
+        {
+            "id": 1739795810235,
+            "firstName": "damian",
+            "lastName": "asd",
+            "birthdate": "1898-12-12",
+            "email": "damianasd@wp.pl",
+            "username": "damianasd",
+            "password": "$2b$10$JOOioaqkryiP2HGZTyK3l.BYZaZyNRziaUI/CJ2yE8q9FSDQ7Nn06",
+            "bio": "ale essunia\n",
+            "age": 127,
+            "avatar": "/uploads/1739795810160-104284853.jpg",
+            "friends": [
+                1739795032996
+            ]
+        },
+        {
+            "id": 1739804342805,
+            "firstName": "git",
+            "lastName": "git",
+            "birthdate": "2000-12-12",
+            "email": "git@wp.pl",
+            "username": "git",
+            "password": "$2b$10$cs66M67e6jeYuW6cVVjSd.Q0OJlcZyUqJ0sW9JjSOnFD4z7w.jaaa",
+            "bio": "",
+            "age": 25,
+            "avatar": "/uploads/1739804342730-14302797.webp",
+            "friends": [
+                1739795032996
+            ]
+        },
+        {
+            "id": 1739829704298,
+            "firstName": "ddd",
+            "lastName": "ddd",
+            "birthdate": "1998-12-12",
+            "email": "ddd@wp.pl",
+            "username": "ddd",
+            "password": "$2b$10$Qn1BrMMy.fg3a94Di1Lq9.eRzBTYSWupHMjRBsHxa5cusuKzmOkH.",
+            "bio": "dfgdfg",
+            "age": 27,
+            "avatar": "/uploads/1739829704235-535503792.jpg",
+            "friends": [
+                1739795032996,
+                1739795557692
+            ]
+        }
+    ],
+    "posts": [
+        {
+            "id": "1739799047963",
+            "userId": 1739795032996,
+            "author": "Użytkownik 1739795032996",
+            "content": "asdas",
+            "likes": 17
+        },
+        {
+            "id": "1739801622648",
+            "userId": 1739795557692,
+            "author": "Użytkownik 1739795557692",
+            "content": "asdasd",
+            "likes": 15
+        },
+        {
+            "id": "1739828528684",
+            "userId": 1739795032996,
+            "author": "Użytkownik 1739795032996",
+            "content": "jkansdjnasdkla",
+            "likes": 0
+        },
+        {
+            "id": "1739828529617",
+            "userId": 1739795032996,
+            "author": "Użytkownik 1739795032996",
+            "content": "fghfgh",
+            "likes": 0
+        },
+        {
+            "id": "1739828531985",
+            "userId": 1739795032996,
+            "author": "Użytkownik 1739795032996",
+            "content": "fghfghfg",
+            "likes": 0
+        },
+        {
+            "id": "1739828535458",
+            "userId": 1739795032996,
+            "author": "Użytkownik 1739795032996",
+            "content": "fghfgh",
+            "likes": 0
+        }
+    ],
+    "stories": [
+        {
+            "id": "1739795492979",
+            "userId": 1739795032996,
+            "mediaUrl": "/uploads/stories/1739795492977-955061059-istockphoto-485371557-612x612.png",
+            "mediaType": "image",
+            "createdAt": "2025-02-17T12:31:32.979Z"
+        },
+        {
+            "id": "1739795508699",
+            "userId": 1739795032996,
+            "mediaUrl": "/uploads/stories/1739795508457-861370234-Desktop 2025.02.03 - 19.21.12.01.mp4",
+            "mediaType": "video",
+            "createdAt": "2025-02-17T12:31:48.699Z"
+        },
+        {
+            "id": "1739799500870",
+            "userId": 1739795810235,
+            "mediaUrl": "/uploads/stories/1739799500867-179415545-dramatic-landscape.jpg",
+            "mediaType": "image",
+            "createdAt": "2025-02-17T13:38:20.870Z"
+        },
+        {
+            "id": "1739800737706",
+            "userId": 1739795810235,
+            "mediaUrl": "/uploads/stories/1739800737700-502493882-Capture001.png",
+            "mediaType": "image",
+            "createdAt": "2025-02-17T13:58:57.706Z"
+        }
+    ]
+}

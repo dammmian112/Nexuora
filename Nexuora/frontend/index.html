@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexuora</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hanunoo&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <img src="assets/nexuora1.png" alt="Nexuora Logo" class="logo" onclick="goToHome()">
+        </div>
+        <ul class="nav-links">
+            <li><a href="friends.html">👥 Znajomi <span id="friendRequestsCount">(0)</span></a></li>
+            <li><a href="profile.html">Profil</a></li>
+            <li><a href="#" onclick="logout()">Wyloguj</a></li>
+        </ul>
+    </nav>    
+    <div class="main-container">
+        <aside class="right-sidebar">
+            <h2>Znajomi online</h2>
+            <ul id="friendsOnline"></ul>
+        </aside>
+        <main class="content">
+            <section class="stories">
+                <h2>Relacje</h2>
+                <div class="stories-wrapper">
+                    <button class="add-story" onclick="uploadStory()">+</button>
+                    <div class="stories-container" id="storiesContainer"></div>
+                </div>
+            </section>
+            <section class="post-box">
+                <h2>Co masz na myśli?</h2>
+                <textarea id="postContent" placeholder="Podziel się myślami..." onkeydown="handleEnter(event)"></textarea>
+                <button onclick="addPost()">Dodaj post</button>
+            </section>
+            <section id="posts" class="posts-container"></section>
+        </main>
+                <div class="messages-panel">
+                    <div class="messages-toggle" onclick="toggleMessagesPanel()">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="messages-content">
+                        <div class="messages-header">
+                            <h2>Wiadomości</h2>
+                            <button class="close-button" onclick="loadChatContacts()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="messages-list" id="messagesList">
+                        </div>
+                        <div class="message-input">
+                            <input type="text" id="messageInput" placeholder="Napisz wiadomość...">
+                            <button onclick="sendMessage()">Wyślij</button>
+                        </div>
+                    </div>
+                </div>
+        
+    </div>
+    </div>
+
+    <script>
+        function goToHome() {
+            window.location.href = "index.html";
+        }
+
+        function handleEnter(event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                addPost();
+            }
+        }
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            if (message) {
+                const messagesList = document.getElementById('messagesList');
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.textContent = message;
+                messagesList.appendChild(messageElement);
+                messageInput.value = '';
+                messagesList.scrollTop = messagesList.scrollHeight;
+            }
+        }
+    </script>
+
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/features.js"></script>
+    
+    <script>
+        async function updateFriendRequestsCount() {
+            const token = localStorage.getItem("token");
+            if (!token) {
+                console.warn("Użytkownik niezalogowany, licznik zaproszeń nie zostanie pobrany.");
+                return;
+            }
+        
+            try {
+                const response = await fetch(`${API_URL}/friends/requests`, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+        
+                if (response.ok) {
+                    const data = await response.json();
+                    const count = data.friendRequests ? data.friendRequests.length : 0;
+                    document.getElementById("friendRequestsCount").textContent = `(${count})`;
+                } else {
+                    console.error("Błąd pobierania zaproszeń:", response.status);
+                }
+            } catch (error) {
+                console.error("Błąd podczas pobierania zaproszeń:", error);
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", updateFriendRequestsCount);
+    </script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Znajomi - Nexuora</title>
+    <link rel="stylesheet" href="css/friends.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <img src="assets/nexuora1.png" alt="Nexuora Logo" class="logo" onclick="goToHome()">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="profile.html">Profil</a></li>
+            <li><a href="#" onclick="logout()">Wyloguj</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <section class="friends-section">
+            <h2>Wyszukaj znajomych</h2>
+            <input type="text" id="searchFriendsInput" placeholder="🔍 Wyszukaj znajomych...">
+            <button onclick="searchFriends()">Szukaj</button>
+            <ul id="searchResults"></ul> 
+        </section>
+        <section class="friends-section">
+            <h2>Zaproszenia do znajomych</h2>
+            <ul id="friendRequestsList"></ul>
+        </section>
+        <section class="friends-section">
+            <h2>Twoi znajomi</h2>
+            <ul id="friendsList"></ul>
+        </section>
+    </div>
+    <script>
+        function goToHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/friends.js"></script>
+</body>
+</html>

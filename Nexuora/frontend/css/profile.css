@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 🌅 Tło */
+body {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    background: #3a3f8f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 17px 40px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    color: #3a3f8f;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: white;
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 120px auto 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: black;
+    position: relative;
+}
+
+.nav-links a:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: white;
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
+
+.profile-header {
+    padding: 20px;
+}
+
+.profile-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4e54c8;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.profile-header img:hover {
+    transform: scale(1.05);
+}
+
+.profile-header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #4e54c8;
+}
+
+.profile-info {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    text-align: left;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#edit-bio-btn, #save-bio-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+    background: #4e54c8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#edit-bio-btn:hover, #save-bio-btn:hover {
+    background: #3a3f8f;
+}
+
+#bio-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.delete-account-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-account-section h2 {
+    font-size: 20px;
+    color: #ff4d4d;
+    margin-bottom: 15px;
+}
+
+.delete-account-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.danger-btn {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.danger-btn:hover {
+    background: #cc0000;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+        gap: 15px;
+    }
+
+    .profile-container {
+        width: 90%;
+        margin: 100px auto 30px;
+    }
+
+    .profile-header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-header h1 {
+        font-size: 24px;
+    }
+
+    .profile-info {
+        font-size: 14px;
+    }
+
+    .delete-account-section h2 {
+        font-size: 18px;
+    }
+
+    .delete-account-section p {
+        font-size: 12px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
